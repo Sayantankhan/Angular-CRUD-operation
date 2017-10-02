@@ -1,0 +1,2 @@
+# Angular-CRUD-operation
+CRUD(CREAT,READ,UPDATION,DELETE)
