@@ -163,8 +163,8 @@ myapp.controller('CrudController',['$scope','$http',function($scope,$http){
              $scope.message = user;
 
              $http({
-               method: "GET",
-               url: "",
+               method: "POST",
+               url: "http://localhost:8081/AngularDemo/AngularController",
                params:{
                  email : user.email,
                  password: user.password

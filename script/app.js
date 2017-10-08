@@ -1,1 +1,3 @@
-var myapp = angular.module('FormValidation',['ValidationController' ]);
+'use strict';
+
+var app = angular.module('FormValidation',['ValidationController','AngularCrud']);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Angular Demo</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="angular-1.6.4/angular.min.js"></script>
+<script src="angular-1.6.4/angular-resource.min.js"></script>
+<script src="angular-1.6.4/angular-route.min.js"></script>
+<script src="script/bundle1.js"></script>
+<!-- <script src="script/controller.js"></script> -->
+<base href="/">
+</head>
+<body ng-app="FormValidation">
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/homefield">Home</a></li>
+      <li><a href="/CRUD">Page 1</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div ng-view></div>
+</body>
+
+</html>

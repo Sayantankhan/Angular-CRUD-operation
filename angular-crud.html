@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Angular Demo</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="angular-1.6.4/angular.min.js"></script>
+<script src="script/crudoperation.js"></script>
+
+</head>
+<body ng-app="FormValidation" ng-strict-di> <!-- for incorporate multiple dependency in angular module-->
+  <div class="container" ng-controller="CrudController">
+  <h2>Login Form</h2>
+      {{message}}
+  <form>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" ng-model="user.email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" ng-model="user.password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <input type="button" class="btn btn-default" value="Submit" ng-click="insert(user)" />
+
+  </form>
+</div>
+</body>
+
+</html>
