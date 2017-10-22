@@ -1,7 +1,8 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-
+var express = require('express');
+var app = express();
 
 http.createServer(function (req, res) {
     var urlParse =  url.parse(req.url,true);
@@ -9,6 +10,10 @@ http.createServer(function (req, res) {
 
     console.log(urlParse);
     console.log(fileName);
+
+    // app.get('/',function(req,res){
+    //   res.sendFile('index.html',{root: ""});
+    // });
 
     fs.readFile(fileName,function(err,data){
       if(err){

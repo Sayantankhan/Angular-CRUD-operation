@@ -70,7 +70,8 @@
 __webpack_require__(1);
 __webpack_require__(2);
 __webpack_require__(3);
-module.exports = __webpack_require__(4);
+__webpack_require__(4);
+module.exports = __webpack_require__(5);
 
 
 /***/ }),
@@ -160,16 +161,28 @@ myapp.controller('FormValidationcntrl',['$scope',function($scope){
 var myapp = angular.module('AngularCrud',[]);
 
 myapp.controller('CrudController',['$scope','$http',function($scope,$http){
+
+          //insert into database
            $scope.insert = function(user){
              $scope.message = user;
-
+             console.log(user.email);
              $http({
                method: "POST",
-               url: "http://localhost:8081/AngularDemo/AngularController",
-               params:{
+               url: "http://localhost:8082/validateData",
+               headers: {
+                 "Content-Type": "application/x-www-form-urlencoded"
+               },
+               data:{
                  email : user.email,
                  password: user.password
                }
+              //// not using params because this params binds the data with url
+             //// even it is post method
+            //// so node will not find value in body part
+              //  params:{
+              //    email : user.email,
+              //    password: user.password
+              //  }
 
              }).then(function success(response){
 
@@ -187,7 +200,7 @@ myapp.controller('CrudController',['$scope','$http',function($scope,$http){
 "use strict";
 
 
-var app = angular.module('Routeapp', ['ngRoute']);
+var app = angular.module('Routeapp', ['ngRoute','Viewmodule']);
 app.config(function($routeProvider,$locationProvider) {
 
     $routeProvider
@@ -199,11 +212,29 @@ app.config(function($routeProvider,$locationProvider) {
     })
     .when("/CRUD", {
       templateUrl: 'angular-crud.html'
+    })
+    .when("/view/:id",{
+      templateUrl:'viewid.html',
+      controler: 'Viewcontroller'
     });
 
   $locationProvider.html5Mode(true).hashPrefix('!');
 
 });
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var app = angular.module('Viewmodule',[]);
+
+app.controller('Viewcontroller',['$scope','$routeParams',function($scope,$routeParams){
+    $scope.value = $routeParams.id;
+}]);
 
 
 /***/ })

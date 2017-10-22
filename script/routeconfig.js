@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('Routeapp', ['ngRoute']);
+var app = angular.module('Routeapp', ['ngRoute','Viewmodule']);
 app.config(function($routeProvider,$locationProvider) {
 
     $routeProvider
@@ -10,8 +10,12 @@ app.config(function($routeProvider,$locationProvider) {
     .when("/homefield", {
         templateUrl : 'home.html'
     })
-    .when("/about_page", {
-      templateUrl: 'crud.html'
+    .when("/CRUD", {
+      templateUrl: 'angular-crud.html'
+    })
+    .when("/view/:id",{
+      templateUrl:'viewid.html',
+      controler: 'Viewcontroller'
     });
 
   $locationProvider.html5Mode(true).hashPrefix('!');

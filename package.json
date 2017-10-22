@@ -9,6 +9,9 @@
   "author": "Sayantan",
   "license": "ISC",
   "dependencies": {
-    "angular-route": "^1.6.4"
+    "angular-route": "^1.6.4",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongo-crud": "^1.0.2"
   }
 }
