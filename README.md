@@ -9,6 +9,8 @@ To run this application just download angular(1.x.x)-js and use angular-1.x.x.mi
 
 In this project we are using node server and mongodb as a database 
 so before run the project we have to incorporate some node modules, They are
+... http MODULE                           --- use for http request
+... fs MODULE                             --- use for filesystem 
 ... express MODULE                        --- use for routing purpose
 ... path MODULE                           --- use for the path 
 ... body-parser MODULE                    --- use for parsing body portion of a request
